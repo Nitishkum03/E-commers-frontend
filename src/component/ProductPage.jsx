@@ -13,7 +13,7 @@ export default function ProductPage() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/products/${id}`);
+        const response = await fetch(`https://e-commers-backend-si16.onrender.com/api/products/${id}`);
         const data = await response.json();
         setProduct(data);
       } catch (error) {
@@ -23,7 +23,7 @@ export default function ProductPage() {
 
     const fetchRelatedProducts = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/products');
+            const response = await fetch('https://e-commers-backend-si16.onrender.com/api/products');
             let data = await response.json();
             data = data.filter(p => p._id !== id).slice(0, 3);
             setRelated(data);
